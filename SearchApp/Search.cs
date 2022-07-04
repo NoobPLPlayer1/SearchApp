@@ -3,11 +3,11 @@
 public abstract class Search : ISearch
 {
     public List<string> Results { get; } = new();
-    public abstract ISearcher GetSearcher();
+    public abstract ISearcher CreateSearcher();
 
     public async Task<IEnumerable<string>> SearchAsync()
     {
-        ISearcher searcher = GetSearcher();
+        ISearcher searcher = CreateSearcher();
         await searcher.SearchAsync(Directory.GetCurrentDirectory());
         return Results;
     }

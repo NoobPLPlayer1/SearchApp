@@ -15,7 +15,7 @@ public class FileSearch : Search
         };
     }
 
-    public override ISearcher GetSearcher()
+    public override ISearcher CreateSearcher()
     {
         return new FileSearcher()
         {

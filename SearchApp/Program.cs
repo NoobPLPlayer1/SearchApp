@@ -1,18 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
+﻿// Jag har implementerat
+// Singleton,
+// Factory Method,
+// Strategy,
+// Observer.
+
+// Det finns en kommentar exemplevis 
+// public Action OnSomething; // Observer
+// Vid varje ställe där desing mönstret är relevant.
+
+// AsyncSearcher implementerar observer
+
+// ISort, IPrint och dess implementationer är del av stratagy pattern
+// och Printer använder ISort och IPrint
+
+// ConsolePrint är en singleton
+
+// ISearch definerar Factory Method 'CreateSearcher'
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 const string SEARCH_FILE_ENDING = ".search.config";
 const string PRINTER_FILE_ENDING = ".printer.config";
@@ -170,6 +174,7 @@ void SaveSearchConfig()
     formatter.Serialize(saveSearch, search);
     saveSearch.Flush();
 }
+
 void SavePrintConfig()
 {
     Console.Clear();

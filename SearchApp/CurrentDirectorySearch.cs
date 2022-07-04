@@ -13,7 +13,7 @@ public class CurrentDirectorySearch : Search
         };
     }
 
-    public override ISearcher GetSearcher()
+    public override ISearcher CreateSearcher()
     {
         return new CurrentDirectortSearcher()
         {
